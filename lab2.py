@@ -82,6 +82,7 @@ def integer_right_triangles(p):
     return triangles
 
 #################################################################################
+
 def test1():
     assert is_perfect(6) == True
     assert is_perfect(28) == True
@@ -98,17 +99,6 @@ def test1():
 # EXERCISE 2
 #################################################################################
 
-# implement this function
-def multiples_of_3_and_5(n):
-  multiples = []
-  for x in range(n):
-    if (x % 3 == 0 or x % 5 == 0):
-      multiples.append(x)
-  sum = 0
-  for x in multiples:
-    sum += x
-  return sum
-
 # (3 points)
 def test2():
     assert multiples_of_3_and_5(10) == 23
@@ -118,14 +108,6 @@ def test2():
 #################################################################################
 # EXERCISE 3
 #################################################################################
-def integer_right_triangles(p):
-    count = 0
-    for a in range(1,p):
-      for b in range(a,p):
-        c = p - a - b
-        if (a*a + b*b == c*c and a + b + c == p):
-          count += 1
-    return count
 
 def test3():
     assert integer_right_triangles(60) == 2
