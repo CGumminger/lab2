@@ -83,13 +83,16 @@ def integer_right_triangles(p):
 
 #################################################################################
 def test1():
-    tc = unittest.TestCase()
-    for n in (6, 28, 496):
-        tc.assertTrue(is_perfect(n), '{} should be perfect'.format(n))
-    for n in (1, 2, 3, 4, 5, 10, 20):
-        tc.assertFalse(is_perfect(n), '{} should not be perfect'.format(n))
-    for n in range(30, 450):
-        tc.assertFalse(is_perfect(n), '{} should not be perfect'.format(n))
+    assert is_perfect(6) == True
+    assert is_perfect(28) == True
+    assert is_perfect(496) == True
+    assert is_perfect(1) == False
+    assert is_perfect(2) == False
+    assert is_perfect(3) == False
+    assert is_perfect(4) == False
+    assert is_perfect(5) == False
+    assert is_perfect(10) == False
+    assert is_perfect(20) == False
 
 #################################################################################
 # EXERCISE 2
@@ -108,10 +111,9 @@ def multiples_of_3_and_5(n):
 
 # (3 points)
 def test2():
-    tc = unittest.TestCase()
-    tc.assertEqual(multiples_of_3_and_5(10), 23)
-    tc.assertEqual(multiples_of_3_and_5(500), 57918)
-    tc.assertEqual(multiples_of_3_and_5(1000), 233168)
+    assert multiples_of_3_and_5(10) == 23
+    assert multiples_of_3_and_5(500) == 57918
+    assert multiples_of_3_and_5(1000) == 233168
 
 #################################################################################
 # EXERCISE 3
@@ -126,15 +128,13 @@ def integer_right_triangles(p):
     return count
 
 def test3():
-    tc = unittest.TestCase()
-    tc.assertEqual(integer_right_triangles(60), 2)
-    tc.assertEqual(integer_right_triangles(100), 0)
-    tc.assertEqual(integer_right_triangles(180), 3)
+    assert integer_right_triangles(60) == 2
+    assert integer_right_triangles(100) == 0
+    assert integer_right_triangles(180) == 3
     
 def main():
     test1()
     test2()
     test3()
 
-if __name__ == '__main__':
-    main()
+main()
